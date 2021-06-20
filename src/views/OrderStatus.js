@@ -42,6 +42,7 @@ function OrderStatus() {
             } catch (error) {
                 console.log('Task failed successfully')
                 setServerError(true)
+                setLoading(false)
             }
         }
         getOrders()
@@ -84,7 +85,7 @@ function OrderStatus() {
                     </button>
                 </div>
             )}
-            {serverError && !loading && (
+            {serverError && (
                 <div className="whoops">
                     <h3>Nothing to see here!</h3>
                     <img src={oops} alt="spilled coffee" />
