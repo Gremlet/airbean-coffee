@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import * as dayjs from 'dayjs'
 import { logout } from '../redux/actions'
 import { useHistory } from 'react-router'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 function Profile() {
     const currentUser = useSelector((state) => {
@@ -16,11 +17,13 @@ function Profile() {
     let [historyLoaded, setHistoryLoaded] = useState(false)
     let [totalSpent, setTotalSpent] = useState(0)
     let [totalDiscounts, setTotalDiscounts] = useState(0)
+    let [loading, setLoading] = useState(false)
 
     const dispatch = useDispatch()
     const routeHistory = useHistory()
 
     useEffect(() => {
+        setLoading(true)
         async function fetchHistory() {
             try {
                 const response = await fetch(
@@ -29,7 +32,9 @@ function Profile() {
                 const data = await response.json()
                 console.log(data)
                 setHistory(data)
+                setLoading(false)
                 setHistoryLoaded(true)
+
                 let total = 0
 
                 for (let i = 0; i < data.length; i++) {
@@ -73,7 +78,7 @@ function Profile() {
                 Log out
             </button>
 
-            {historyLoaded && (
+            {historyLoaded && !loading && (
                 <div className="order-history">
                     <h2>Order history</h2>
                     {history.map((item) => {
@@ -99,10 +104,16 @@ function Profile() {
                     </div>
                 </div>
             )}
-            {!historyLoaded && (
+            {!historyLoaded && !loading && (
                 <div className="whoops">
                     <h3>Aw, shucks! Something went sideways... please try again!</h3>
                     <img src={oops} alt="spilled coffee" />
+                </div>
+            )}
+            {loading && (
+                <div className="loading">
+                    <h1>Loading...</h1>
+                    <CircularProgress style={{ color: '#0e927d' }} />
                 </div>
             )}
         </div>

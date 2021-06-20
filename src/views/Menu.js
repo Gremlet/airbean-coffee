@@ -8,12 +8,14 @@ import { addToCart } from '../redux/actions'
 import Cart from '../components/Cart'
 import Snackbar from '@material-ui/core/Snackbar'
 import Alert from '@material-ui/lab/Alert'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 function Menu() {
     const [menu, setMenu] = useState(() => [])
     const [menuLoaded, setMenuLoaded] = useState(false)
     const [open, setOpen] = useState(false)
     const [showHideMenu, setShowHideMenu] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -34,12 +36,14 @@ function Menu() {
     }
 
     useEffect(() => {
+        setLoading(true)
         async function fetchMenu() {
             try {
                 const response = await fetch('https://secure-plains-75893.herokuapp.com/api/coffee')
                 const data = await response.json()
                 console.log(data)
                 setMenu(data)
+                setLoading(false)
                 setMenuLoaded(true)
             } catch (error) {
                 setMenuLoaded(false)
@@ -53,6 +57,7 @@ function Menu() {
             <Cart showMenu={setMenuVisibility} />
             <h1 className={`menu-title ${showHideMenu}`}>Menu</h1>
             {menuLoaded &&
+                !loading &&
                 menu.map((menuItem) => {
                     return (
                         <div key={menuItem.id} className={`menu-container ${showHideMenu}`}>
@@ -78,10 +83,16 @@ function Menu() {
                         </div>
                     )
                 })}
-            {!menuLoaded && (
+            {!menuLoaded && !loading && (
                 <div className="whoops">
                     <h3>Aw shucks! Something went sideways... please try again!</h3>
                     <img src={oops} alt="spilled coffee" />
+                </div>
+            )}
+            {loading && (
+                <div className="loading">
+                    <h2>Loading...</h2>
+                    <CircularProgress style={{ color: '#0e927d' }} />
                 </div>
             )}
 

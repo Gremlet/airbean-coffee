@@ -6,6 +6,7 @@ import oops from '../assets/oops.svg'
 import { useEffect, useState } from 'react'
 import * as dayjs from 'dayjs'
 import { useHistory } from 'react-router'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 function OrderStatus() {
     const currentUser = useSelector((state) => {
@@ -18,9 +19,11 @@ function OrderStatus() {
     const [latestOrder, setLatestOrder] = useState({})
     const [serverError, setServerError] = useState(false)
     const [orderExists, setOrderExists] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         async function getOrders() {
+            setLoading(true)
             try {
                 const response = await fetch(
                     `https://secure-plains-75893.herokuapp.com/api/order/${currentUser.userID}`
@@ -36,6 +39,7 @@ function OrderStatus() {
                 setLatestOrder(sorted[0])
                 setStatus(sorted[0].status)
                 setOrderExists(true)
+                setLoading(false)
             } catch (error) {
                 console.log('Task failed successfully')
                 setServerError(true)
@@ -50,7 +54,7 @@ function OrderStatus() {
 
     return (
         <div className="order-status">
-            {!serverError && orderExists ? (
+            {!serverError && !loading && orderExists && (
                 <div className="main-content">
                     <div className="top">
                         <p className="orderNumber">
@@ -80,13 +84,20 @@ function OrderStatus() {
                         Ok, cool!
                     </button>
                 </div>
-            ) : (
+            )}
+            {serverError && !loading && (
                 <div className="whoops">
                     <h3>Nothing to see here!</h3>
                     <img src={oops} alt="spilled coffee" />
                     <button className="cool" onClick={returnToNav}>
                         Go back
                     </button>
+                </div>
+            )}
+            {loading && (
+                <div className="loading">
+                    <h1>Loading...</h1>
+                    <CircularProgress style={{ color: '#0e927d' }} />
                 </div>
             )}
         </div>
