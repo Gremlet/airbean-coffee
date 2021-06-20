@@ -1,0 +1,216 @@
+@import 'colors';
+.cart {
+    .circle2 {
+        position: absolute;
+        top: 0px;
+        right: 5px;
+    }
+
+    .cart-icon {
+        position: absolute;
+        top: -4px;
+        right: 29px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .cart-card {
+        width: 340px;
+        height: 560px;
+        background-color: rgba(255, 255, 255, 0.93);
+        position: absolute;
+        top: 75px;
+        right: 17px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        color: $brown;
+        z-index: 1;
+        box-shadow: 0px 0px 32px 0px #00000099;
+        animation: growDown 300ms ease-in-out forwards;
+        transform-origin: top center;
+
+        @keyframes growDown {
+            0% {
+                transform: scaleY(0);
+            }
+
+            80% {
+                transform: scaleY(1.1);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        .cart-title {
+            text-align: center;
+        }
+
+        .cart-item {
+            padding: 0px 16px 0 16px;
+            margin-top: 10px;
+            display: grid;
+            grid-auto-rows: 20px 30px 20px;
+            grid-auto-columns: auto auto 36px;
+            grid-template-areas:
+                'increase increase increase'
+                'title remove quantity'
+                'price price decrease';
+
+            .increase {
+                grid-area: increase;
+                justify-self: end;
+                border: none;
+                background: none;
+                font-size: 1.2em;
+                padding: 0px 8px 0px 8px;
+            }
+
+            .cart-item-title {
+                grid-area: title;
+                align-self: center;
+                margin: 0;
+            }
+
+            .cart-item-quantity {
+                grid-area: quantity;
+                justify-self: center;
+                align-self: center;
+                font-weight: 700;
+            }
+
+            .cart-price {
+                grid-area: price;
+                margin: 0;
+                font-size: 0.75em;
+            }
+            .decrease {
+                grid-area: decrease;
+                justify-self: end;
+                border: none;
+                background: none;
+                font-size: 1.2em;
+                padding: 0px 8px 0px 8px;
+            }
+            .remove {
+                grid-area: remove;
+                justify-self: end;
+                border: none;
+                background: none;
+                font-size: 1.2em;
+                align-self: center;
+                margin-top: 5px;
+            }
+        }
+        .cart-total {
+            padding: 10px;
+            margin-top: 16px;
+            display: grid;
+
+            grid-template-areas:
+                'discount discamount'
+                'total totalamount'
+                'including including';
+
+            .c-discount {
+                grid-area: discount;
+                align-self: center;
+                margin: 0;
+                font-size: 0.8em;
+                color: $orange;
+            }
+            .c-discamount {
+                grid-area: discamount;
+                margin: 0px 10px;
+                justify-self: end;
+                font-size: 0.8em;
+                color: $orange;
+            }
+            .c-total {
+                grid-area: total;
+                margin: 10px 0px 0px 0px;
+            }
+            .c-amount {
+                grid-area: totalamount;
+                margin: 0;
+                justify-self: end;
+                margin: 10px 0px 0px 0px;
+            }
+            .including {
+                grid-area: including;
+                margin: 0px 0px 16px 0px;
+                align-self: top;
+                font-size: 0.7em;
+            }
+        }
+        .pay {
+            text-align: center;
+
+            .pay-button {
+                font-family: 'PT Serif', serif;
+                font-size: 1.5em;
+                font-weight: 700;
+                border: none;
+                border-radius: 50px;
+                padding: 10px;
+                background-color: $brown;
+                color: white;
+                width: 80%;
+                margin-bottom: 30px;
+                &:hover {
+                    background-color: $dark-green;
+                }
+            }
+        }
+    }
+    .pay-now {
+        width: 350px;
+        height: 744px;
+        background-color: $brown;
+        color: rgba(255, 255, 255, 0.904);
+        position: absolute;
+        z-index: 1;
+        top: 16px;
+        right: 12.5px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 0px 0px 32px 0px #00000099;
+        animation: rotateDiv 400ms ease-in-out forwards;
+        transform-origin: top center;
+
+        @keyframes rotateDiv {
+            0% {
+                transform: rotateY(90deg);
+            }
+
+            80% {
+                transform: rotateY(-20deg);
+            }
+            100% {
+                transform: rotateY(0);
+            }
+        }
+    }
+    .go {
+        border: none;
+        background: $orange;
+        padding: 10px;
+        width: 60%;
+        border-radius: 50px;
+        font-family: 'PT Serif', serif;
+        font-size: 1.2em;
+        font-weight: 700;
+        color: white;
+
+        &:hover {
+            background-color: $dark-green;
+            cursor: pointer;
+        }
+    }
+}

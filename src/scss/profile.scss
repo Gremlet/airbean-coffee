@@ -1,0 +1,97 @@
+@import 'colors';
+
+.profile {
+    color: white;
+    text-align: center;
+
+    .username {
+        margin-bottom: 5px;
+    }
+    .email {
+        color: rgba(255, 255, 255, 0.8);
+        margin-top: 5px;
+    }
+    .logout {
+        background: none;
+        border: 1px solid $dark-green;
+        border-radius: 20px;
+        color: $dark-green;
+        padding: 5px 8px;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 0.75em;
+        font-weight: 700;
+
+        &:hover {
+            border: 1px solid $orange;
+            color: $orange;
+            cursor: pointer;
+        }
+    }
+
+    .order-history {
+        text-align: left;
+        padding: 20px;
+
+        .order-container {
+            font-size: 0.75em;
+            color: rgba(255, 255, 255, 0.801);
+            display: grid;
+            grid-template-areas:
+                'orderno date'
+                'total price'
+                'line line';
+
+            > p {
+                margin: 5px;
+            }
+
+            .orderno {
+                grid-area: orderno;
+                font-weight: 700;
+            }
+            .date {
+                grid-area: date;
+                justify-self: end;
+            }
+            .total-text {
+                grid-area: total;
+            }
+            .price {
+                grid-area: price;
+                justify-self: end;
+            }
+            .line {
+                grid-area: line;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.322);
+            }
+        }
+
+        .discounts {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75em;
+            font-weight: 700;
+            color: $orange;
+            margin-top: 10px;
+        }
+        .total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+    .whoops {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        > h3 {
+            width: 70%;
+        }
+    }
+}
