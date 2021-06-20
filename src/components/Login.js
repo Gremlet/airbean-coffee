@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../redux/actions.js'
 import { useHistory } from 'react-router-dom'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 function Login() {
     let [username, setUsername] = useState('')
     let [password, setPassword] = useState('')
     let [isLoggedIn, setIsLoggedIn] = useState(null)
     let [serverError, setServerError] = useState(false)
+    let [loading, setLoading] = useState(false)
 
     const handleUsername = (event) => setUsername(event.target.value)
     const handlePassword = (event) => setPassword(event.target.value)
@@ -19,8 +21,7 @@ function Login() {
 
     async function userLogin(event) {
         event.preventDefault()
-        console.log(username, password)
-
+        setLoading(true)
         try {
             const requestOptions = {
                 method: 'POST',
@@ -30,8 +31,8 @@ function Login() {
             const response = await fetch('https://secure-plains-75893.herokuapp.com/api/login', requestOptions)
             const data = await response.json()
             dispatch(addUser(data))
-            console.log(data)
             setIsLoggedIn(data.loggedIn)
+            setLoading(false)
             setServerError(false)
         } catch (error) {
             console.log("It's dead, Jim")
@@ -41,7 +42,6 @@ function Login() {
 
     useEffect(() => {
         if (isLoggedIn) {
-            console.log('This is where we push to profile page')
             history.push('/profile')
         }
     }, [isLoggedIn, history])
@@ -79,6 +79,11 @@ function Login() {
                 </form>
                 {isLoggedIn === false && <p className="errMsg">Wrong username or password. Please try again.</p>}
                 {serverError && <p className="errMsg">Eek! Something went wrong on our end. Please try again.</p>}
+                {loading && (
+                    <p className="errMsg" style={{ color: '#0e927d' }}>
+                        Logging in... <CircularProgress style={{ color: '#0e927d' }} size="1rem" />
+                    </p>
+                )}
             </div>
         </div>
     )

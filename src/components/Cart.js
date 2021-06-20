@@ -59,12 +59,11 @@ function Cart(props) {
                 orderArr.push(cart[i].id)
             }
         }
-        console.log(orderArr)
+
         setOrderArray(orderArr)
     }
 
     async function sendOrder() {
-        console.log('SendOrder is working...')
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -76,8 +75,6 @@ function Cart(props) {
 
         dispatch(emptyCart())
         history.push('/status')
-
-        // also remember to empty cart!
     }
 
     useEffect(() => {

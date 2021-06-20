@@ -30,7 +30,6 @@ function Profile() {
                     `https://secure-plains-75893.herokuapp.com/api/order/${currentUser.userID}`
                 )
                 const data = await response.json()
-                console.log(data)
                 setHistory(data)
                 setLoading(false)
                 setHistoryLoaded(true)
@@ -54,11 +53,11 @@ function Profile() {
         function getDiscounts() {
             let discounts = 0
             let discountedOrders = history.filter((order) => order.discount > 0)
-            console.log(discountedOrders)
+
             for (let order of discountedOrders) {
                 discounts = discounts + order.discount
             }
-            console.log('discounts', discounts)
+
             setTotalDiscounts(discounts)
         }
         getDiscounts()

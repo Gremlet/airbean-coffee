@@ -41,7 +41,7 @@ function Menu() {
             try {
                 const response = await fetch('https://secure-plains-75893.herokuapp.com/api/coffee')
                 const data = await response.json()
-                console.log(data)
+
                 setMenu(data)
                 setLoading(false)
                 setMenuLoaded(true)

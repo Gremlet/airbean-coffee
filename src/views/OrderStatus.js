@@ -29,7 +29,6 @@ function OrderStatus() {
                     `https://secure-plains-75893.herokuapp.com/api/order/${currentUser.userID}`
                 )
                 const data = await response.json()
-                console.log('Data:', data)
 
                 let sorted = data.sort(function (a, b) {
                     return dayjs(b.ETA) - dayjs(a.ETA)
