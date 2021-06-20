@@ -1,4 +1,4 @@
-## Airbean. Drone-delivered coffee ☕️
+## AirBean. Drone-delivered coffee ☕️
 
 
 AirBean is a super awesome online coffee shop that delivers coffee to your door, by drone, within 15 minutes. 
