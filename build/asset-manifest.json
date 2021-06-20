@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/airbean-coffee/static/css/main.5abe488a.chunk.css",
-    "main.js": "/airbean-coffee/static/js/main.205a9134.chunk.js",
-    "main.js.map": "/airbean-coffee/static/js/main.205a9134.chunk.js.map",
+    "main.js": "/airbean-coffee/static/js/main.1f28d3e5.chunk.js",
+    "main.js.map": "/airbean-coffee/static/js/main.1f28d3e5.chunk.js.map",
     "runtime-main.js": "/airbean-coffee/static/js/runtime-main.b52018a8.js",
     "runtime-main.js.map": "/airbean-coffee/static/js/runtime-main.b52018a8.js.map",
-    "static/js/2.d6d96476.chunk.js": "/airbean-coffee/static/js/2.d6d96476.chunk.js",
-    "static/js/2.d6d96476.chunk.js.map": "/airbean-coffee/static/js/2.d6d96476.chunk.js.map",
+    "static/js/2.93f53276.chunk.js": "/airbean-coffee/static/js/2.93f53276.chunk.js",
+    "static/js/2.93f53276.chunk.js.map": "/airbean-coffee/static/js/2.93f53276.chunk.js.map",
     "index.html": "/airbean-coffee/index.html",
     "static/css/main.5abe488a.chunk.css.map": "/airbean-coffee/static/css/main.5abe488a.chunk.css.map",
-    "static/js/2.d6d96476.chunk.js.LICENSE.txt": "/airbean-coffee/static/js/2.d6d96476.chunk.js.LICENSE.txt",
+    "static/js/2.93f53276.chunk.js.LICENSE.txt": "/airbean-coffee/static/js/2.93f53276.chunk.js.LICENSE.txt",
     "static/media/airbean-logo-lg.199b75ea.svg": "/airbean-coffee/static/media/airbean-logo-lg.199b75ea.svg",
     "static/media/airbean-logo.3d7b4f54.svg": "/airbean-coffee/static/media/airbean-logo.3d7b4f54.svg",
     "static/media/avatar.c79d32af.svg": "/airbean-coffee/static/media/avatar.c79d32af.svg",
@@ -21,8 +21,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b52018a8.js",
-    "static/js/2.d6d96476.chunk.js",
+    "static/js/2.93f53276.chunk.js",
     "static/css/main.5abe488a.chunk.css",
-    "static/js/main.205a9134.chunk.js"
+    "static/js/main.1f28d3e5.chunk.js"
   ]
 }
