@@ -96,7 +96,7 @@ function OrderStatus() {
             )}
             {loading && (
                 <div className="loading">
-                    <h1>Loading...</h1>
+                    <h2>Fetching order... hang tight...</h2>
                     <CircularProgress style={{ color: '#0e927d' }} />
                 </div>
             )}
