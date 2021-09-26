@@ -1,28 +1,29 @@
 {
   "files": {
     "main.css": "/airbean-coffee/static/css/main.1878e33d.chunk.css",
-    "main.js": "/airbean-coffee/static/js/main.c4af2292.chunk.js",
-    "main.js.map": "/airbean-coffee/static/js/main.c4af2292.chunk.js.map",
+    "main.js": "/airbean-coffee/static/js/main.5c17dd8c.chunk.js",
+    "main.js.map": "/airbean-coffee/static/js/main.5c17dd8c.chunk.js.map",
     "runtime-main.js": "/airbean-coffee/static/js/runtime-main.b52018a8.js",
     "runtime-main.js.map": "/airbean-coffee/static/js/runtime-main.b52018a8.js.map",
-    "static/js/2.47de8bbd.chunk.js": "/airbean-coffee/static/js/2.47de8bbd.chunk.js",
-    "static/js/2.47de8bbd.chunk.js.map": "/airbean-coffee/static/js/2.47de8bbd.chunk.js.map",
+    "static/js/2.f21bed62.chunk.js": "/airbean-coffee/static/js/2.f21bed62.chunk.js",
+    "static/js/2.f21bed62.chunk.js.map": "/airbean-coffee/static/js/2.f21bed62.chunk.js.map",
     "index.html": "/airbean-coffee/index.html",
     "static/css/main.1878e33d.chunk.css.map": "/airbean-coffee/static/css/main.1878e33d.chunk.css.map",
-    "static/js/2.47de8bbd.chunk.js.LICENSE.txt": "/airbean-coffee/static/js/2.47de8bbd.chunk.js.LICENSE.txt",
+    "static/js/2.f21bed62.chunk.js.LICENSE.txt": "/airbean-coffee/static/js/2.f21bed62.chunk.js.LICENSE.txt",
     "static/media/airbean-logo-lg.199b75ea.svg": "/airbean-coffee/static/media/airbean-logo-lg.199b75ea.svg",
     "static/media/airbean-logo.3d7b4f54.svg": "/airbean-coffee/static/media/airbean-logo.3d7b4f54.svg",
     "static/media/avatar.c79d32af.svg": "/airbean-coffee/static/media/avatar.c79d32af.svg",
     "static/media/delivered.d386f073.svg": "/airbean-coffee/static/media/delivered.d386f073.svg",
     "static/media/drone.48571d77.svg": "/airbean-coffee/static/media/drone.48571d77.svg",
     "static/media/footer.f5b3d569.svg": "/airbean-coffee/static/media/footer.f5b3d569.svg",
+    "static/media/getFetch.cjs": "/airbean-coffee/static/media/getFetch.582d29c4.cjs",
     "static/media/header.376dd4da.svg": "/airbean-coffee/static/media/header.376dd4da.svg",
     "static/media/oops.ac428f05.svg": "/airbean-coffee/static/media/oops.ac428f05.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b52018a8.js",
-    "static/js/2.47de8bbd.chunk.js",
+    "static/js/2.f21bed62.chunk.js",
     "static/css/main.1878e33d.chunk.css",
-    "static/js/main.c4af2292.chunk.js"
+    "static/js/main.5c17dd8c.chunk.js"
   ]
 }
