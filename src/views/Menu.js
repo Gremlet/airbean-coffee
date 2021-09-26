@@ -47,6 +47,7 @@ function Menu() {
                 setMenuLoaded(true)
             } catch (error) {
                 setMenuLoaded(false)
+                setLoading(false)
                 console.log('is a heckin error')
             }
         }

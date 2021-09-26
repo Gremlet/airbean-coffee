@@ -42,6 +42,7 @@ function Profile() {
                 }
             } catch (error) {
                 console.log('Big error boi')
+                setLoading(false)
                 setHistoryLoaded(false)
             }
         }

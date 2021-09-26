@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { createStore } from 'redux'
 import airbeanReducer from './redux/reducer.js'
 import { Provider } from 'react-redux'
+import './i18n'
 
 // Store
 const store = createStore(airbeanReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

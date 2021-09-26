@@ -36,6 +36,7 @@ function Login() {
             setServerError(false)
         } catch (error) {
             console.log("It's dead, Jim")
+            setLoading(false)
             setServerError(true)
         }
     }
